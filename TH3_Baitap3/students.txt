@@ -1,0 +1,7 @@
+THONG TIN SINH VIEN 
+Ma SV: 66132052
+Ho ten: le thi diem my
+Diem Toan: 9.0
+Diem Ly: 9.0
+Diem Hoa: 7.0
+Diem TB: 8.33
