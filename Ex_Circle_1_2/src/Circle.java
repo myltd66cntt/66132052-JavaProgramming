@@ -1,11 +1,11 @@
-public class Ex_1_2a {
+public class Circle {
     private double radius;
 
-    public Ex_1_2a() {
+    public Circle() {
         radius = 1.0;
     }
 
-    public Ex_1_2a(double r) {
+    public Circle(double r) {
         radius = r;
     }
 
@@ -31,7 +31,7 @@ public class Ex_1_2a {
     }
 
     public static void main(String[] args) {
-        Ex_1_2a c1 = new Ex_1_2a();
+        Circle c1 = new Circle();
         System.out.println(c1.toString());
         System.out.println("Area: " + c1.getArea());
         System.out.println("Circumference: " + c1.getCircumference());
