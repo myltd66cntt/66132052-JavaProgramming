@@ -31,4 +31,15 @@ public class RunMain {
         // Giải phóng tài nguyên bộ quét
         banPhim.close();
     }
+
+		//b. In ra danh sách vừa nhập
+		System.out.print("DANH SÁCH VỪA NHẬP LÀ \n");
+		for (int i = 0; i < dsSoNguyen.size(); i++) {
+            // Lấy giá trị phần tử ở vị trí i, cất vào biến tam
+            Integer tam = dsSoNguyen.get(i);
+            System.out.print(tam + " ");
+        }
+		for (Integer x : dsSoNguyen) {
+            System.out.print(x + " ");
+	 }
 }
