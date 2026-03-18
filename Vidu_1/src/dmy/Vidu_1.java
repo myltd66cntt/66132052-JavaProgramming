@@ -1,41 +1,18 @@
 package dmy;
 
-public class SanPham {
-    private String maSP;
-    private String tenSP;
-    private double gia;
-    private int soLuong;
+public class Vidu_1 {
 
-    // Constructor rỗng
-    public SanPham() {
-        this.maSP = "";
-        this.tenSP = "";
-        this.gia = 0;
-        this.soLuong = 0;
-    }
+    public static void main(String[] args) {
+        SanPham sp1 = new SanPham();
+        System.out.println(sp1);
+        
+        SanPham sp2 = new SanPham("A010", "pencil", 3000, 15);
+        System.out.println(sp2);
 
-    // Constructor đầy đủ
-    public SanPham(String maSP, String tenSP, double gia, int soLuong) {
-        this.maSP = maSP;
-        this.tenSP = tenSP;
-        this.gia = gia;
-        this.soLuong = soLuong;
-    }
+        sp2.setGia(4000);
+        System.out.println("-> Sau khi thay doi gia: ");
+        System.out.println(sp2);
 
-    // Setter giá
-    public void setGia(double gia) {
-        this.gia = gia;
-    }
-
-    // Tính thành tiền
-    public double tinhThanhTien() {
-        return gia * soLuong;
-    }
-
-    // toString để in ra đẹp
-    @Override
-    public String toString() {
-        return "Ma: " + maSP + ", Ten: " + tenSP + 
-               ", Gia: " + gia + ", So luong: " + soLuong;
+        System.out.println("Tong tien: " + sp2.tinhThanhTien());
     }
 }
