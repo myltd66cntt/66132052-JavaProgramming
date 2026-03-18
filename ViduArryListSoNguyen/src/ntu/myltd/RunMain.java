@@ -42,4 +42,24 @@ public class RunMain {
 		for (Integer x : dsSoNguyen) {
             System.out.print(x + " ");
 	 }
-}
+}        // --- c. Đếm số phần tử chẵn ---
+        int soLuongPTchan = 0;
+        for (Integer x : dsSoNguyen) {
+            if (x % 2 == 0) {
+                soLuongPTchan++; // Tăng biến đếm lên 1
+            }
+        }
+        System.out.println("Số phần tử chẵn là: " + soLuongPTchan);
+
+        // --- d. Tính tổng các phần tử (Thuật toán cộng dồn) ---
+        int TongAll = 0;
+        for (Integer x : dsSoNguyen) {
+            TongAll = TongAll + x;
+        }
+        System.out.println("Tổng tất cả các phần tử là: " + TongAll);
+
+        // Giải phóng tài nguyên
+        banPhim.close();
+        
+    } // Kết thúc phương thức main (Dấu này rất quan trọng)
+} // Kết thúc class
