@@ -1,10 +1,50 @@
 package myltd.quanlynhanvien;
 
 public class NhanVien {
+    // Thuộc tính
+    private String maNV;
+    private String hoTen;
+    private double luongCoBan;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    // Hàm tạo
+    public NhanVien() {
 
+    }
+
+    public NhanVien(String maNV, String hoTen, double luongCoBan) {
+		super();
+		this.maNV = maNV;
+		this.hoTen = hoTen;
+		this.luongCoBan = luongCoBan;
 	}
 
+	public NhanVien(String maNhanVien, String tenNhanVien, double luongCoBan) {
+        this.maNV = maNhanVien;
+        this.hoTen = tenNhanVien;
+        this.luongCoBan = luongCoBan;
+    }
+
+	public NhanVien() {
+		super();
+	}
+	public double TinhLuong() {
+		return luongCoBan;
+	}
+
+	@Override
+	public String toString() {
+		String chuoiXuat = "";
+        chuoiXuat = chuoiXuat + "Mã NV: " + this.maNV;
+        chuoiXuat = chuoiXuat + "\nHọ tên: " + this.hoTen;
+        chuoiXuat = chuoiXuat + "\nLương cơ bản: " + this.luongCoBan;
+        return chuoiXuat;
+//		return "NhanVien [maNV=" + maNV + ", hoTen=" + hoTen + ", luongCoBan=" + luongCoBan + "]";
+	}
+	
+	public void hienthiThongTin() {
+		System.out.println("Mã NV: " + maNV);
+        System.out.println("Họ tên: " + hoTen);
+        System.out.println("Lương cơ bản: " + luongCoBan);
+	}
+	
 }
