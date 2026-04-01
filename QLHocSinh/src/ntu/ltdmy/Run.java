@@ -1,33 +1,58 @@
 package ntu.ltdmy;
 
-public class HocSinh {
-  
-    private String tenHS;
-    private short tuoiHS;
-    private String lopHS;
+public class Run {
 
-    
-    public HocSinh() {}
-    
-    public HocSinh(String tenHS, short tuoiHS, String lopHS) {
-        this.tenHS = tenHS;
-        this.tuoiHS = tuoiHS;
-        this.lopHS = lopHS;
-    }
+	public static void main(String[] args) {
+		// 2.a: Tạo mới 2 HS, hard-code dữ liệu
+		HocSinh hs1 = new HocSinh();
+		
+		String tenHS1 = "Trần Văn A";
+		hs1.setTenHS(tenHS1);
+		
+		short tuoiHS1 = 14;
+	    hs1.setTuoiHS(tuoiHS1);
+	    
+	    String lopHS1 = "8A-12";
+	    hs1.setLopHS(lopHS1);
+	    
+	    HocSinh hs2 = new HocSinh("Trần Thị Tươi", (short)12, "6C");
+	    
+	    // IN ra màn hình
+	    System.out.print(hs1.toString());
+	    System.out.print(hs2.toString());
 
+	    
+	    System.out.println("\nTên của HS 2 là: " + hs2.getTenHS());
+	    System.out.println("Tuổi của HS 2 là: " + hs2.getTuoiHS());
+	    System.out.println("Lớp của HS 2 là: " + hs2.getLopHS());
+	    
+	  //=========================NHẬP DỮ LIỆU TỪ BÀN PHÍM
+	    Scanner banPhim = new Scanner(System.in);
 
-    public void setTenHS(String tenHS) { this.tenHS = tenHS; }
-    public String getTenHS() { return tenHS; }
+	    // Nhập dữ liệu cho học sinh thứ 3
+	    HocSinh hs3 = new HocSinh();
 
-    public void setTuoiHS(short tuoiHS) { this.tuoiHS = tuoiHS; }
-    public short getTuoiHS() { return tuoiHS; }
+	    // 1. Nhập tên
+	    System.out.print("Mời nhập tên của học sinh thứ 3: ");
+	    String tenHS3 = banPhim.nextLine();
+	    hs3.setTenHS(tenHS3);
 
-    public void setLopHS(String lopHS) { this.lopHS = lopHS; }
-    public String getLopHS() { return lopHS; }
+	    // 2. Nhập tuổi
+	    System.out.print("Mời nhập tuổi của học sinh thứ 3: ");
+	    short tuoiHS3 = banPhim.nextShort();
+	    hs3.setTuoiHS(tuoiHS3);
 
- 
-    @Override
-    public String toString() {
-        return "HocSinh [Tên: " + tenHS + ", Tuổi: " + tuoiHS + ", Lớp: " + lopHS + "]\n";
-    }
+	    // Xử lý trôi lệnh (quan trọng: sau khi nhập số mà muốn nhập chuỗi tiếp theo)
+	    banPhim.nextLine(); 
+
+	    // 3. Nhập lớp
+	    System.out.print("Mời nhập lớp của học sinh thứ 3: ");
+	    String lopHS3 = banPhim.nextLine();
+	    hs3.setLopHS(lopHS3);
+
+	    // In kết quả kiểm tra
+	    System.out.println("\n--- Thông tin học sinh thứ 3 vừa nhập ---");
+	    System.out.println(hs3.toString());
+	}
+
 }
