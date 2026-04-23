@@ -8,13 +8,13 @@ package thigk2.LeThiDiemMy;
  * 4. toString(): Ghi đè phương thức mặc định để xuất chuỗi thông tin nhanh.
  */
 public class SanPham {
-	// 1. Thuộc tính
+
 	private String maSP;
 	private String tenSP;
 	private String loaiSP;
-	private double giaSP; // Tên biến khớp với toString của bạn
+	private double giaSP; //thuộc tính thứ 4 em tự thêm
 
-	// 2. Constructor đầy đủ tham số
+
 	public SanPham(String maSP, String tenSP, String loaiSP, double giaSP) {
 		this.maSP = maSP;
 		this.tenSP = tenSP;
@@ -22,7 +22,7 @@ public class SanPham {
 		this.giaSP = giaSP;
 	}
 
-	// 3. Các Getter và Setter
+	r
 	public String getMaSP() { return maSP; }
 	public void setMaSP(String maSP) { this.maSP = maSP; }
 
@@ -35,20 +35,72 @@ public class SanPham {
 	public double getGiaSP() { return giaSP; }
 	public void setGiaSP(double giaSP) { this.giaSP = giaSP; }
 
-	// 4. Ghi đè phương thức toString() - CHẠY ĐƯỢC KHI GỌI IN ĐỐI TƯỢNG
 	@Override
 	public String toString() {
 		return "Ma san pham: " + maSP + ", ten san pham: " + tenSP + 
 			   ", loai san pham: " + loaiSP + ", gia: " + giaSP;
 	}
 
-	// 5. Hàm main để thực thi
 	public static void main(String[] args) {
-		// Tạo đối tượng
+	
 		SanPham sp1 = new SanPham("SP001", "Laptop Gaming", "Dien tu", 20000000);
 		
-		// CÁCH CHẠY: Chỉ cần in biến 'sp1', Java sẽ tự tìm đến hàm toString()
+	
 		System.out.println("KET QUA IN RA:");
 		System.out.println(sp1); 
+	}
+}
+package thigk2.LeThiDiemMy;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	/*
+	 * TÓM TẮT CÁCH GIẢI:
+	 * Sử dụng ArrayList để lưu trữ danh sách sản phẩm.
+	 * Tạo sẵn 3 sản phẩm mẫu bằng phương thức add().
+	 * Nhập thông tin sản phẩm mới từ bàn phím và thêm vào danh sách.
+	 * Duyệt danh sách in toàn bộ và lọc theo loại "Thực phẩm chức năng".
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<SanPham> dsSanPham = new ArrayList<>();
+
+		dsSanPham.add(new SanPham("SP01", "Sữa bột", "Thực phẩm", 450000));
+		dsSanPham.add(new SanPham("SP02", "Vitamin C", "Thực phẩm chức năng", 150000));
+		dsSanPham.add(new SanPham("SP03", "Dầu cá", "Thực phẩm chức năng", 280000));
+
+		System.out.println("--- Danh sách 3 sản phẩm ban đầu ---");
+		for (SanPham sp : dsSanPham) {
+			System.out.println(sp);
+		}
+
+		System.out.println("\n--- Nhập thông tin sản phẩm mới ---");
+		System.out.print("Nhập mã sản phẩm: ");
+		String ma = sc.nextLine();
+		System.out.print("Nhập tên sản phẩm: ");
+		String ten = sc.nextLine();
+		System.out.print("Nhập loại sản phẩm: ");
+		String loai = sc.nextLine();
+		System.out.print("Nhập giá bán: ");
+		double gia = sc.nextDouble();
+		sc.nextLine(); // Xóa bộ nhớ đệm sau khi nhập số
+
+		dsSanPham.add(new SanPham(ma, ten, loai, gia));
+
+		System.out.println("\n--- Danh sách sau khi thêm ---");
+		for (SanPham sp : dsSanPham) {
+			System.out.println(sp);
+		}
+
+		System.out.println("\n--- Các sản phẩm loại 'Thực phẩm chức năng' ---");
+		for (SanPham sp : dsSanPham) {
+			if (sp.getLoaiSP().equalsIgnoreCase("Thực phẩm chức năng")) {
+				System.out.println(sp);
+			}
+		}
+
+		sc.close();
 	}
 }
